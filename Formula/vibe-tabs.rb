@@ -18,7 +18,7 @@ class VibeTabs < Formula
     pkgshare.install ".vibe-tabs.yml.example"
 
     app = buildpath/"Vibe Tabs.app"
-    system "/usr/bin/osacompile", "-o", app, "libexec/open-vibe-tabs.applescript"
+    system "/usr/bin/osacompile", "-o", app, libexec/"open-vibe-tabs.applescript"
     cp "assets/applet.icns", app/"Contents/Resources/applet.icns"
     touch app
     system "/usr/bin/codesign", "--force", "--deep", "--sign", "-", app
