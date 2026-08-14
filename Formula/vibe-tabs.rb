@@ -1,8 +1,8 @@
 class VibeTabs < Formula
   desc "Restore named tmux workspaces for AI coding agents on macOS"
   homepage "https://github.com/TakeOnePiece/vibe-tabs"
-  url "https://github.com/TakeOnePiece/vibe-tabs/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "e48c06195ce1c26ed8b36b4611c9da55dbaf36eb09219d7a86565da929c507e3"
+  url "https://github.com/TakeOnePiece/vibe-tabs/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "e63bd5f7a170219c96c4ea6129514a706c88c1eabb5b3d05360932d95a26dbe8"
   license "MIT"
   head "https://github.com/TakeOnePiece/vibe-tabs.git", branch: "main"
 
@@ -39,6 +39,9 @@ app/"Contents/Info.plist"
 
       Open the macOS app, which you can then keep in the Dock:
         vibe-tabs --app
+
+      On first launch, allow Vibe Tabs in:
+        System Settings > Privacy & Security > Accessibility
     EOS
   end
 
