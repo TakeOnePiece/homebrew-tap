@@ -1,8 +1,8 @@
 class VibeTabs < Formula
   desc "Restore named tmux workspaces for AI coding agents on macOS"
   homepage "https://github.com/TakeOnePiece/vibe-tabs"
-  url "https://github.com/TakeOnePiece/vibe-tabs/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "08eb60141e9c2d1183034ea85ce8c95c9a395daa8114e842a74147de234191b4"
+  url "https://github.com/TakeOnePiece/vibe-tabs/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "e48c06195ce1c26ed8b36b4611c9da55dbaf36eb09219d7a86565da929c507e3"
   license "MIT"
   head "https://github.com/TakeOnePiece/vibe-tabs.git", branch: "main"
 
@@ -19,7 +19,11 @@ class VibeTabs < Formula
 
     app = buildpath/"Vibe Tabs.app"
     system "/usr/bin/osacompile", "-o", app, libexec/"open-vibe-tabs.applescript"
-    cp "assets/applet.icns", app/"Contents/Resources/applet.icns"
+    cp "assets/VibeTabs.icns", app/"Contents/Resources/VibeTabs.icns"
+    system "/usr/bin/plutil", "-replace", "CFBundleIconFile", "-string", "VibeTabs", app/"Contents/Info.plist"
+    system "/usr/bin/plutil", "-remove", "CFBundleIconName", app/"Contents/Info.plist"
+    system "/usr/bin/plutil", "-replace", "CFBundleIdentifier", "-string", "com.takeonepiece.vibetabs",
+app/"Contents/Info.plist"
     touch app
     system "/usr/bin/codesign", "--force", "--deep", "--sign", "-", app
     prefix.install app
