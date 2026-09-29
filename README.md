@@ -1,7 +1,7 @@
 # TakeOnePiece Homebrew Tap
 
 ```sh
-brew install takeonepiece/tap/vibe-tabs
+brew install takeonepiece-public/tap/vibe-tabs
 ```
 
-See [Vibe Tabs](https://github.com/TakeOnePiece/vibe-tabs) for configuration and usage.
+See [Vibe Tabs](https://github.com/TakeOnePiece-Public/vibe-tabs) for configuration and usage.
