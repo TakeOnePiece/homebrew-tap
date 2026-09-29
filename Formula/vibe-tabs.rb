@@ -1,8 +1,8 @@
 class VibeTabs < Formula
   desc "Restore named tmux workspaces for AI coding agents on macOS"
   homepage "https://github.com/TakeOnePiece/vibe-tabs"
-  url "https://github.com/TakeOnePiece/vibe-tabs/archive/refs/tags/v0.2.1.tar.gz"
-  sha256 "519dbb5f06baeee08574d78d9a98aef4e048b4f626829a3d87dad6e1bf5f85f8"
+  url "https://github.com/TakeOnePiece/vibe-tabs/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "583d57a9232d93c46fe8b44c39bd19063189a047dd9874f54ac94f5ddea6e7f1"
   license "MIT"
   head "https://github.com/TakeOnePiece/vibe-tabs.git", branch: "main"
 
@@ -14,7 +14,7 @@ class VibeTabs < Formula
 
   def install
     libexec.install Dir["libexec/*"]
-    bin.install "bin/vibe-tab", "bin/vibe-tabs"
+    bin.install "bin/vibe-tab", "bin/vibe-tabs", "bin/vibe-tabs-add"
     pkgshare.install ".vibe-tabs.yml.example"
 
     app = buildpath/"Vibe Tabs.app"
